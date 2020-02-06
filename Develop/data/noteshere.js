@@ -1,14 +1,16 @@
 //array of note objects//
 
-var notesArray = [
+var noteListItems = [
     {
+        id: 4,
         title: "Title",
         text: "Text"
     },
-    {
+    {   
+        id: 5,
         title: "khalil",
         text: "this sucks"
     }
 ];
 
-module.exports = notesArray;
+module.exports = noteListItems;

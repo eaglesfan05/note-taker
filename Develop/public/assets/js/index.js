@@ -26,6 +26,7 @@ var saveNote = function(note) {
 
 // A function for deleting a note from the db
 var deleteNote = function(id) {
+  console.log(id);
   return $.ajax({
     url: "api/notes/" + id,
     method: "DELETE"
@@ -66,11 +67,12 @@ var handleNoteSave = function() {
 var handleNoteDelete = function(event) {
   // prevents the click listener for the list from being called when the button inside of it is clicked
   event.stopPropagation();
-
+  console.log("clicked");
   var note = $(this)
+
     .parent(".list-group-item")
     .data();
-
+    console.log(note);
   if (activeNote.id === note.id) {
     activeNote = {};
   }
@@ -123,6 +125,7 @@ var renderNoteList = function(notes) {
   }
 
   $noteList.append(noteListItems);
+  
 };
 
 // Gets notes from the db and renders them to the sidebar
