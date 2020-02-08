@@ -2,7 +2,7 @@
 
 var noteInfo = require("../db/db.json");
 var fs = require("fs");
-var store = require("../db/Store")
+var store = require("../db/Store.js")
 var id = 0;
 
 
@@ -19,15 +19,7 @@ module.exports = function(app){
         //is technically a refresh//
         res.redirect("/");
         
-        let note = new Store(res.title, res.text, res.id);
-
-        var write = fs.appendFile("./db/db.json", note, "utf8", function(err){
-            if(err){
-                console.log("did not write");
-            }else{
-                console.log("wrote to file");
-            }
-        })
+       
     });
 
     
